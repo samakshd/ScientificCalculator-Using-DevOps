@@ -15,9 +15,9 @@ pipeline {
         stage('Git Pull') {
             steps {
                 // credentials are required because its a private repository
-                git url: 'https://github.com/james-jasvin/Calculator-Using-DevOps.git',
+                git url: 'https://github.com/samakshd/ScientificCalculator-Using-DevOps.git',
                 branch: 'master',
-                credentialsId: 'github-pat'
+                credentialsId: 'c8c63ab8-2222-4e55-9c03-ceb350db4db0'
             }
         }
         
