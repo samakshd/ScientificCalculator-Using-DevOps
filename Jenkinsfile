@@ -1,9 +1,5 @@
 pipeline {
     // Declare variables that will be used by the later stages
-    environment {
-        DOCKERHUB_REGISTRY = "jasvinjames/calculator-using-devops"
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub-id')
-    }
     
     // The "agent" section configures on which nodes the pipeline can be 
     // run. Specifying "agent any" means that Jenkins will run the job on  
