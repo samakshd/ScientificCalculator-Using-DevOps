@@ -29,9 +29,8 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-    }
 
-    stage('Build Docker Image') {
+        stage('Build Docker Image') {
 			steps {
 				sh "docker build -t $DOCKERHUB_REGISTRY:latest ."
 			}
@@ -54,5 +53,8 @@ pipeline {
                 sh "docker rmi $DOCKERHUB_REGISTRY:latest"
             }
         }
+    }
+
+    
 }
 
