@@ -30,5 +30,29 @@ pipeline {
             }
         }
     }
+
+    stage('Build Docker Image') {
+			steps {
+				sh "docker build -t $DOCKERHUB_REGISTRY:latest ."
+			}
+		}
+
+		stage('Login to Docker Hub') {
+			steps {
+				sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+			}
+		}
+
+		stage('Push Docker Image to Docker Hub') {
+			steps {
+				sh 'docker push $DOCKERHUB_REGISTRY:latest'
+			}
+		}
+        
+        stage('Removing Docker Image from Local') {
+            steps {
+                sh "docker rmi $DOCKERHUB_REGISTRY:latest"
+            }
+        }
 }
 
