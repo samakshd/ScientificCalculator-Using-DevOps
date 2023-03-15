@@ -1,1 +1,2 @@
-172.16.136.163 ansible_user=samakshd ansible_connection=local
+[clients]
+172.16.136.163 ansible_user=samakshd
