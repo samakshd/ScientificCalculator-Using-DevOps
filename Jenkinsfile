@@ -53,6 +53,18 @@ pipeline {
                 sh "docker rmi $DOCKERHUB_REGISTRY:latest"
             }
         }
+
+        // Ansible Deploy to remote server (managed host)
+        stage('Ansible Deploy') {
+            steps {
+                ansiblePlaybook becomeUser: 'null',
+                colorized: true,
+                installation: 'Ansible',
+                inventory: 'inventory',
+                playbook: 'deploy-playbook.yml',
+                sudoUser: 'null'
+            }
+        }
     }
 
     
