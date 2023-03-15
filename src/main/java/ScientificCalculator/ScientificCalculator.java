@@ -11,6 +11,12 @@ public class ScientificCalculator {
         ScientificCalculator calculator = new ScientificCalculator();
         Scanner scanner = new Scanner(System.in);
 
+        // When the Docker container is started in the background via Ansible and you attach your terminal to it,
+        // the initial application System.out.println statements are wiped out, to avoid that we use this stop-gap fix
+        // Only enter the application once the user has pressed Enter key on the terminal.
+        System.out.println("Press Enter key to start the application\n");
+        scanner.nextLine();
+
         Boolean exit = false;
         while(!exit) {
             System.out.println("---------------------");
