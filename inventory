@@ -1,2 +1,2 @@
 [clients]
-localhost ansible_user=samakshd
+172.16.136.163 ansible_user=samakshd
