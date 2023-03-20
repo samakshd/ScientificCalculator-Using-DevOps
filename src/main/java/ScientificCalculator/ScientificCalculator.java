@@ -149,7 +149,6 @@ public class ScientificCalculator {
     }
 
     public double squareRoot(double number) {
-        logger.info("[SQ ROOT] - " + number);
         double result = 0;
         try {
             if(number < 0) {
@@ -163,12 +162,11 @@ public class ScientificCalculator {
             System.out.println("[EXCEPTION - SQUARE ROOT]: "+error.getLocalizedMessage());
         }
 
-        logger.info("[RESULT - SQ ROOT] - " + result);
+        logger.info("[SQUARE_ROOT] - " + number + " - [RESULT] - " + result);
         return result;
     }
 
     public double factorial(int number) {
-        logger.info("[FACTORIAL] - " + number);
         double result = 1;
         try{
             if(number<0) {
@@ -184,13 +182,12 @@ public class ScientificCalculator {
             System.out.println("[EXCEPTION - FACTORIAL]: "+error.getLocalizedMessage());
         }
 
-        logger.info("[RESULT - FACTORIAL] - " + result);
+        logger.info("[FACTORIAL] - " + number + " - [RESULT] - " + result);
         return result;
     }
 
 
     public double naturalLog(double number) {
-        logger.info("[NATURAL LOG] - " + number);
         double result = 0;
 
         try {
@@ -204,12 +201,11 @@ public class ScientificCalculator {
         catch (ArithmeticException error) {
             System.out.println("[EXCEPTION - NATURAL LOG]: " + error.getLocalizedMessage());
         }
-        logger.info("[RESULT - NATURAL LOG] - " + result);
+        logger.info("[LOGARITHM] - " + number + " - [RESULT] - " + result);
         return result;
     }
 
     public double power(double number1, double number2) {
-        logger.info("[POWER - " + number1 + " RAISED TO] " + number2);
         double result = 0;
         try{
             if(number1 == 0 && number2 ==0) {
@@ -224,7 +220,7 @@ public class ScientificCalculator {
             System.out.println("[EXCEPTION - POWER]: " + error.getLocalizedMessage());
         }
 
-        logger.info("[RESULT - POWER] - " + result);
+        logger.info("[POWER] - " + number1 + " " + number2 + " - [RESULT] - " + result);
         return result;
     }
 
