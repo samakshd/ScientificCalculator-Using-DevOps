@@ -2,6 +2,7 @@ package ScientificCalculator;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 public class ScientificCalculator {
@@ -162,7 +163,12 @@ public class ScientificCalculator {
             System.out.println("[EXCEPTION - SQUARE ROOT]: "+error.getLocalizedMessage());
         }
 
-        logger.info("[SQUARE_ROOT] - " + number + " - [RESULT] - " + result);
+        if(result != Double.NaN) {
+            logger.info("[SQUARE_ROOT] - " + number + " - [RESULT] - " + result);
+        }
+        else {
+            logger.error("[SQUARE_ROOT] - " + number + " - [RESULT] - " + "null");
+        }
         return result;
     }
 
@@ -182,7 +188,12 @@ public class ScientificCalculator {
             System.out.println("[EXCEPTION - FACTORIAL]: "+error.getLocalizedMessage());
         }
 
-        logger.info("[FACTORIAL] - " + number + " - [RESULT] - " + result);
+        if(result != Double.NaN) {
+            logger.info("[FACTORIAL] - " + number + " - [RESULT] - " + result);
+        }
+        else {
+            logger.error("[FACTORIAL] - " + number + " - [RESULT] - " + "null");
+        }
         return result;
     }
 
@@ -201,7 +212,13 @@ public class ScientificCalculator {
         catch (ArithmeticException error) {
             System.out.println("[EXCEPTION - NATURAL LOG]: " + error.getLocalizedMessage());
         }
-        logger.info("[LOGARITHM] - " + number + " - [RESULT] - " + result);
+
+        if(result != Double.NaN) {
+            logger.info("[LOGARITHM] - " + number + " - [RESULT] - " + result);
+        }
+        else {
+            logger.error("[LOGARITHM] - " + number + " - [RESULT] - " + "null");
+        }
         return result;
     }
 
@@ -220,7 +237,13 @@ public class ScientificCalculator {
             System.out.println("[EXCEPTION - POWER]: " + error.getLocalizedMessage());
         }
 
-        logger.info("[POWER] - " + number1 + " " + number2 + " - [RESULT] - " + result);
+        if(result != Double.NaN) {
+            logger.info("[POWER] - " + number1 + " " + number2 + " - [RESULT] - " + result);
+        }
+        else {
+            logger.error("[LOGARITHM] - " + number1 + " " + number2 + " - [RESULT] - " + "null");
+        }
+        
         return result;
     }
 
