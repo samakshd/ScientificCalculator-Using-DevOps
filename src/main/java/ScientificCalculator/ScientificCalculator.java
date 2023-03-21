@@ -158,17 +158,13 @@ public class ScientificCalculator {
             }
 
             result = Math.sqrt(number);
+            logger.info("[SQUARE_ROOT] - " + number + " - [RESULT] - " + result);
         }
         catch (ArithmeticException error) {
             System.out.println("[EXCEPTION - SQUARE ROOT]: "+error.getLocalizedMessage());
-        }
-
-        if(result != Double.NaN) {
-            logger.info("[SQUARE_ROOT] - " + number + " - [RESULT] - " + result);
-        }
-        else {
             logger.error("[SQUARE_ROOT] - " + number + " - [RESULT] - " + "null");
         }
+
         return result;
     }
 
@@ -183,17 +179,13 @@ public class ScientificCalculator {
                 for(int i = 1; i <= number; i++)
                     result *= i;
             }
+            logger.info("[FACTORIAL] - " + number + " - [RESULT] - " + result);
         }
         catch (ArithmeticException error) {
             System.out.println("[EXCEPTION - FACTORIAL]: "+error.getLocalizedMessage());
-        }
-
-        if(result != Double.NaN) {
-            logger.info("[FACTORIAL] - " + number + " - [RESULT] - " + result);
-        }
-        else {
             logger.error("[FACTORIAL] - " + number + " - [RESULT] - " + "null");
         }
+
         return result;
     }
 
@@ -208,17 +200,14 @@ public class ScientificCalculator {
             }
             else
                 result = Math.log(number);
+            
+            logger.info("[LOGARITHM] - " + number + " - [RESULT] - " + result);
         }
         catch (ArithmeticException error) {
             System.out.println("[EXCEPTION - NATURAL LOG]: " + error.getLocalizedMessage());
-        }
-
-        if(result != Double.NaN) {
-            logger.info("[LOGARITHM] - " + number + " - [RESULT] - " + result);
-        }
-        else {
             logger.error("[LOGARITHM] - " + number + " - [RESULT] - " + "null");
         }
+
         return result;
     }
 
@@ -231,16 +220,11 @@ public class ScientificCalculator {
             }
 
             result = Math.pow(number1,number2);
+            logger.info("[POWER] - " + number1 + " " + number2 + " - [RESULT] - " + result);
 
         }
         catch(ArithmeticException error) {
             System.out.println("[EXCEPTION - POWER]: " + error.getLocalizedMessage());
-        }
-
-        if(result != Double.NaN) {
-            logger.info("[POWER] - " + number1 + " " + number2 + " - [RESULT] - " + result);
-        }
-        else {
             logger.error("[LOGARITHM] - " + number1 + " " + number2 + " - [RESULT] - " + "null");
         }
         
